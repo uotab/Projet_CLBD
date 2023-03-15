@@ -1,0 +1,13 @@
+flask
+python-magic
+numpy
+pydub
+librosa
+python-multipart
+ffmpeg
+werkzeug
+soundfile
+pandas
+matplotlib
+sklearn
+statistics

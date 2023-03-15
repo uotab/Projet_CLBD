@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+        xmlns:tools = "http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height = "match_parent"
+        tools:context = ".register.RegisterActivity">
+
+        <TextView
+            android:text = "Register"
+            android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textRegister"
+            android:textSize = "35dp"
+            android:layout_alignParentTop = "true"
+            android:layout_centerHorizontal = "true" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/editLastName"
+            android:focusable = "true"
+            android:textColorHighlight = "#ff7eff15"
+            android:textColorHint = "#ffff25e6"
+            android:layout_marginTop = "46dp"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"
+            android:hint="Lastname" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/editFirstName"
+            android:layout_below="@+id/editLastName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/editLastName"
+            android:layout_alignEnd="@+id/editLastName"
+            android:textColorHint="#ffff299f"
+            android:hint="Firstname" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textWebEmailAddress"
+            android:ems="10"
+            android:id="@+id/editEmail"
+            android:layout_below="@+id/editFirstName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/editFirstName"
+            android:layout_alignEnd="@+id/editFirstName"
+            android:textColorHint="#ffff299f"
+            android:hint="Email" />
+
+        <EditText
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/editUsername"
+            android:hint = "Username"
+            android:layout_below="@+id/editEmail"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/editEmail"
+            android:layout_alignEnd="@+id/editEmail"
+            android:textColorHint="#ffff299f" />
+
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editPassword"
+            android:layout_below="@+id/editUsername"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/editUsername"
+            android:layout_alignEnd="@+id/editUsername"
+            android:textColorHint="#ffff299f"
+            android:hint="Password" />
+
+
+
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:id="@+id/buttonRegister"
+            android:layout_below="@+id/editPassword"/>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

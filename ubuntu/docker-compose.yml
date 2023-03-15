@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  activemqapp:
+    image: rmohr/activemq:latest
+    container_name: activemqapp
+    environment:
+      - ACTIVEMQ_ADMIN_LOGIN=admin
+      - ACTIVEMQ_ADMIN_PASSWORD=admin
+    volumes:
+      - "./activemq/activemq.xml:/conf/activemq.xml"
+    ports:
+      - "61616:61616" 
+      - "8161:8161"
+    networks:
+      - networkapp
+
+  springapp:
+    build:
+      context: backend_projet_springboot
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_ACTIVEMQ_BROKER=tcp://activemqapp:61616
+      - SPRING_ACTIVEMQ_USER=admin
+      - SPRING_ACTIVEMQ_PASSWORD=admin
+      - SPRING_ACTIVEMQ_PACKAGES_TRUST_ALL=true
+    depends_on:
+      - activemqapp
+    ports:
+      - "8082:8082"
+    networks:
+      - networkapp
+
+        #  tensorflowapp:
+        #    image: tensorflow/tensorflow
+        #  ports:
+        # - "8080:8080"
+        #    networks:
+        # - networkapp  
+
+  apipythonapp:
+    build:
+      context: API
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - networkapp
+
+networks:
+  networkapp:
